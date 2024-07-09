@@ -55,7 +55,7 @@ def load_data(directory):
 def main():
     if len(sys.argv) > 2:
         sys.exit("Usage: python degrees.py [directory]")
-    directory = sys.argv[1] if len(sys.argv) == 2 else "small"
+    directory = sys.argv[1] if len(sys.argv) == 2 else "large"
 
     # Load data from files into memory
     print("Loading data...")
@@ -101,7 +101,6 @@ def shortest_path(source, target):
     # Choose a node from the frontier
     while not frontier.empty():
         node = frontier.remove()
-        print(f'node state: {node.state}')
 
         # We've found the target, reconstruct the path
         if node.state == target:
@@ -123,7 +122,6 @@ def shortest_path(source, target):
     # If we've exhausted all possible paths and haven't found the target
     return None
 
-# Sample of small dataset: Kevin Bacon and Robin Wright
 
 def person_id_for_name(name):
     """
@@ -166,6 +164,3 @@ def neighbors_for_person(person_id):
 
 if __name__ == "__main__":
     main()
-
-
-
